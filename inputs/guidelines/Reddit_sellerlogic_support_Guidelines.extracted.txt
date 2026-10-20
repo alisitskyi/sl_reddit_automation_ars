@@ -1,0 +1,274 @@
+SELLERLOGIC
+OPERATING GUIDELINES
+Reddit u/sellerlogic_support
+Guidelines
+Rules for post discovery, reply preparation, and manual publishing
+Version 3.2
+Owner SELLERLOGIC Marketing / Community
+Account u/sellerlogic_support
+Date 29.09.2026
+Status Working process specification
+Internal working document. Do not publish without approval.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 2
+01. Project goal and boundaries
+The project builds a positive SELLERLOGIC reputation among Amazon sellers through useful
+replies from the official corporate sellerlogic_support account. AI finds posts, writes drafts in
+the voice of a knowledgeable SELLERLOGIC employee, and checks them three times. The
+final decision and publication always remain with a person.
+Primary goal
+Help Amazon sellers identify the real cause of a problem, propose a specific next check, and build trust in
+SELLERLOGIC expertise without directly promoting products.
+Core principles
+Every reply must add new practical value.
+The text uses specific details from the post.
+Facts, assumptions, and uncertainty remain separate.
+No covert advertising, product pitch, or invitation to DM.
+The reply voice is a knowledgeable SELLERLOGIC employee with Amazon selling expertise.
+Automation never publishes comments on its own.
+Never use an em dash or en dash. Use only the regular ASCII hyphen -.
+Out of scope
+High-volume commenting for activity or karma.
+A fully autonomous Reddit bot.
+Selling SELLERLOGIC products in comments.
+Fabricated seller experience or unverified Amazon claims.
+Verified baseline
+Metric Value Note
+URLs in the log 42 1 profile and 41 activity links.
+Unique threads 40 One link duplicates a thread.
+Accessible profile comments 64 Mapped to the thread list.
+Average length 99 words Range: 22-189 words.
+SELLERLOGIC mentions / URLs 0 / 0 Strong non-promotional discipline.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 3
+02. Finding new posts
+Discovery uses an allowlist of communities and topic signals. New posts are checked every 60 minutes. The
+goal is not to collect everything, but to find threads where sellerlogic_support can add a useful expert angle.
+Step Action Rule
+1 Start monitoring Run exactly one cycle every 60 minutes.
+2 Collect new posts Take posts created after the previous successful cycle.
+3 Deduplicate Never process the same Reddit post ID twice.
+4 Initial filter Language, topic, age, community rules, useful content.
+5 Review discussion Read the post and existing comments to avoid repeating an answer.
+6 Classify Assign RELEVANT, NEEDS_REVIEW, or IRRELEVANT.
+Community allowlist
+r/FulfillmentByAmazon
+r/AmazonSeller
+r/AmazonFBATips
+r/amazonsellers
+r/AmazonFBA
+r/amazonprivatelabel
+r/Amazonsellercentral
+Search signals
+Category Example words and topics
+Pricing Buy Box, Featured Offer, repricing, price, competitor, stockout.
+PPC ACOS, TACOS, CPC, bid, impressions, search terms, ranking.
+Profitability margin, COGS, fees, Net Proceeds, break-even.
+FBA operations inventory, storage, reimbursement, lost units, reports.
+Account issues suppression, deactivation, appeal, Account Health, Seller Support.
+Listings reviews, variation, title, compliance, conversion.
+Do not process
+Posts without a specific problem and threads where a complete useful answer already exists.
+Outside expertise: Amazon Vine, listing SEO, copywriting, design, sourcing, manufacturing, logistics, legal,
+tax, and IP questions.
+Rule circumvention, review manipulation, fabricated documents, or community rules that prohibit
+corporate participation.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 4
+03. Process mechanics and sequence
+This is the complete process from a new post appearing to manual publication. Each stage produces a
+defined output for the next stage.
+# Stage What happens Output
+1 Monitoring The system checks allowlisted communities every 60
+minutes.
+New post IDs
+2 Parsing Collect post content, metadata, and existing comments. Structured record
+3 Classification Split posts into relevant, uncertain, and irrelevant
+queues.
+Three queues
+4 Analysis For relevant posts, identify the problem, missing data,
+and a new angle.
+Analysis brief
+5 Drafting For relevant posts, AI creates one main
+sellerlogic_support reply.
+Draft
+6 Self-check 1 Detect templates, repetition, and AI phrasing. Rewritten draft
+7 Self-check 2 Compare style with recent account comments. More varied draft
+8 Self-check 3 Check naturalness, specificity, and logic. Final candidate
+9 Your review You edit, approve, or reject the text. Approved text
+10 Manual publishing You personally publish the comment on Reddit. Comment URL
+11 Output and log Send the result to Slack and store the full history in
+Google Sheets.
+Alert and history
+Automation boundary
+The system has no Reddit publishing access and never presses Comment. Its work ends with a ready draft.
+Only you publish after personally reviewing the text.
+Timing logic
+Check for new posts every 60 minutes.
+Each cycle uses the timestamp and post ID from the last successful run.
+If a cycle fails, the cursor does not advance and no posts are lost.
+Drafts have no automatic deadline. They wait for your review.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 5
+04. Parsing process
+The parser creates a clean structured record for every new post. It does not make a final decision or generate
+a reply until filtering is complete.
+Stage Data read System action
+1. Fetch post ID, URL, subreddit, created time Determine novelty and source.
+2. Content title, body, flair, language Clean formatting while preserving the original.
+3. Context comment count and available comments Identify advice already given.
+4. Entities numbers, ASIN, CPC, ACOS, TACOS, dates Extract factual anchors without changing values.
+5. Classification topic, intent, problem type Assign one primary topic and supporting tags.
+6. Safety PII, credentials, legal risk, rule conflicts Redact unnecessary data or block the candidate.
+7. Relevance expertise fit and discussion gap Assign RELEVANT, NEEDS_REVIEW, or IRRELEVANT.
+8. Output structured record Send relevant posts to drafting and uncertain posts to
+your review.
+Parsing result
+Candidate brief
+RELEVANT: prepare a draft. NEEDS_REVIEW: send the URL, text, reasons for and against relevance, and ask
+whether a reply is needed. IRRELEVANT: do not send to Slack, only log the rejection reason in Google
+Sheets.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 6
+05. Positioning and Tone of Voice
+sellerlogic_support sounds like a real, knowledgeable SELLERLOGIC employee with
+Amazon selling expertise. The account helps identify the real cause of a problem
+and the next useful check without advertising, corporate language, or performative
+superiority. It never invents personal experience, cases, or facts.
+Dimension How we sound How we do not sound
+Expertise Explain the mechanism plainly. Lecture or talk down.
+Confidence Strong view with a caveat. Definitely, always, guaranteed.
+Practicality One priority check. A long list of generic tips.
+Native feel Short paragraphs and normal language. PR copy, slogans, emojis.
+Dialogue One question if it changes the diagnosis. Questions only for engagement.
+Language patterns
+Use Avoid
+Based on the numbers you shared...
+The stronger signal is...
+I would separate X from Y.
+Before changing X, check Y.
+Game changer.
+Best tool.
+Amazon always...
+We can solve this.
+DM us.
+Our product...
+Punctuation rule
+Em dashes and en dashes are prohibited in all drafts, final replies, and documentation. Only the regular
+ASCII hyphen is allowed: -.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 7
+06. Topics and reply construction
+Topic Typical help
+Pricing and Featured Offer Eligibility, repricing, stockouts, landed price.
+PPC and profitability ACOS, TACOS, CPC, bids, unit economics.
+FBA fees and inventory Storage, reimbursements, discrepancies, reports.
+Listings and reviews Suppression, titles, compliance, conversion.
+Account Health Appeals, evidence trail, case IDs, Seller Support.
+Reporting SKU versus portfolio, Net Proceeds, COGS.
+Reply sequence
+# Step Control question
+1 Find the core issue What does the author believe is the cause?
+2 Find a new angle What has not yet been said?
+3 Anchor in details Which numbers or facts support the reply?
+4 Explain the mechanism Why is this signal more important?
+5 Give a next step What can the seller check now?
+6 Add a caveat What is unknown or undocumented by Amazon?
+7 Ask if useful Which one answer would change the diagnosis?
+Length
+Simple answer: 40-70 words.
+Diagnostic answer: 80-130 words.
+Complex case: up to 180 words.
+Stop signals
+There is no new useful angle.
+A fact or personal experience would need to be invented.
+The topic requires legal, tax, or policy expert review.
+The comment would violate community rules or look like covert promotion.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 8
+07. Three AI self-checks
+After generation, AI checks and rewrites the text three times. These are separate passes, not
+one generic instruction to check quality.
+# Check What it detects Outcome
+1 AI patterns and repetition Detect repeated openings, excessive structure, AI
+phrasing, and similarity to the last 30 account
+comments.
+Rewrite structure
+and rhythm
+2 Accuracy and value Check every claim against the post and knowledge
+base. Remove invented facts, cases, and personal
+experience.
+Verified useful
+version
+3 Human naturalness Check the SELLERLOGIC employee voice, specificity,
+conversational tone, corporate wording, and AI
+cliches.
+Final natural version
+Hard checks after all three passes
+No em dash or en dash.
+No SELLERLOGIC product pitch, CTA, or unnecessary link.
+No fabricated personal experience.
+No undocumented Amazon claim presented as fact.
+At least one specific detail from the post is used.
+One clear next check or action is present.
+Output format
+Your review package
+Slack, RELEVANT: full post URL, subreddit, full post or target comment text, reason to reply, and the final
+draft after three checks. Slack, NEEDS_REVIEW: URL, text, reasons for and against relevance, and a
+question asking whether to draft. IRRELEVANT posts are not sent to Slack. Google Sheets stores all three
+categories, decisions, drafts, and outcomes.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 9
+08. Your review, publishing, and log
+# Action Your decision Status
+1 Open post URL Check the current context. REVIEWING
+2 Read the draft Edit or reject. EDITED / REJECTED
+3 Final check Confirm facts, tone, and no promotion. APPROVED
+4 Manual publication Copy and personally publish on Reddit. POSTED
+5 Record outcome Add the comment URL and final text. LOGGED
+Publishing rules
+Only you publish comments from the corporate account.
+Automation has no permission to create Reddit comments.
+Open the thread again before posting because the context may have changed.
+If a new comment already provides the same answer, do not publish the draft.
+Fields in the comments log
+Field Content
+Post URL and comment URL Source and published result.
+Subreddit and topic Topic analysis.
+Discovered / drafted / posted at Process timing.
+AI draft and final text Learn from your actual edits.
+Decision POSTED, REJECTED, SKIPPED.
+Reason Why the reply was published or rejected.
+Result Replies, score, removal, useful insight.
+What SLA means
+Plain explanation
+SLA means Service Level Agreement, a target completion time. Separate SLA classes are unnecessary for
+this project. There is one technical rule: check for new posts every 60 minutes. Manual publishing time
+depends on your availability.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 10
+A. Real response examples
+The excerpts below show sellerlogic_support replies in their actual Reddit context.
+Example 1. PPC and unit economics
+What the example demonstrates
+The reply uses the author's specific numbers and shifts the diagnosis from campaign structure to product
+economics and positioning.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 11
+Example 2. Manual repricing
+What the example demonstrates
+The reply introduces a new angle: the practical limit of manual checks and competitors returning to stock.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 12
+Example 3. Seller Support
+What the example demonstrates
+The reply focuses on the exact rejection wording and recommends evidence for one specific objection. The
+thread author's data was excluded from the crop.Reddit u/sellerlogic_support Guidelines English
+Internal working document | 29 September 2026 13
+B. Sources, changes, and data
+Sources: Google Sheets comments log, u/sellerlogic_support profile, and 40 unique Reddit threads. This
+document defines process rules and expected output without recommending a technical implementation.
+Version Date Change
+3.2 29.09.2026 Renamed the document to Reddit u/sellerlogic_support Guidelines.
+3.1 29.09.2026 Updated the SELLERLOGIC visual style, embedded Manrope, removed Vine,
+and removed recommendations about a specific technical implementation.
+Minimum candidate data for specialist handoff
+Field Format Purpose
+post_id, url, subreddit text Identification and deduplication.
+created_at, discovered_at datetime Post age and cycle control.
+title, body text Complete source context.
+existing_comments text/JSON Avoid repeating others.
+topic, intent, tags enum/array Routing and filtering.
+facts_from_post JSON Author numbers and claims.
+missing_information array What may require clarification.
+risk_flags array Reasons to block or review manually.
+status enum NEW, SKIPPED, DRAFTED, REVIEWED, POSTED.

@@ -1,0 +1,561 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns:v='urn:schemas-microsoft-com:vml'
+      xmlns='urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Reddit Reply Lane | Process Documentation</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print media */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is too much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-serif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sidebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at end of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Reddit Reply Lane | Process Documentation</h1>
+    <div class="Section1">
+        <h2 local-id="73be830e-6f52-3c41-ba85-22a8bf5d3105" id="RedditReplyLane|ProcessDocumentation-1.Overview">1. Overview</h2>
+<p local-id="35b4a37d-15e3-3f78-9731-7af5eb200354">The Reddit reply lane helps the official SELLERLOGIC account <strong>u/sellerlogic_support</strong> answer Amazon sellers on Reddit. Every hour it finds new posts in seven seller communities, sorts them, reads the replies under each post, and writes a reply draft that passed the three self-checks from the account guidelines. Anton Lisitskyi reviews every draft in Asana and posts it himself: <strong>the lane never posts, comments or votes on Reddit.</strong></p>
+<hr local-id="d164bc6f-7ec5-3024-90c2-23322c047cc0">
+<h2 local-id="c10882f0-551b-3e0d-b38e-3946ae935ed2" id="RedditReplyLane|ProcessDocumentation-2.ArchitectureOverview">2. Architecture Overview</h2>
+<ul local-id="58567adb-4afc-33d1-9c5c-9d8ac90490be">
+<li local-id="969f019d-1904-3d0a-bf6e-5a5b3c66615f">
+<p local-id="5458031b-42e0-32bc-8821-34175bfe040a"><strong>Trigger / Schedule:</strong> three n8n workflows, all published <time datetime="2026-10-14" class="date-past">14 окт. 2026 г.</time>.</p>
+<ul local-id="d813db8b-6ff9-3c5a-a63f-e99c1bdf1b33">
+<li local-id="c97949cd-b2aa-32e9-9ac0-7f002f1ab37c">
+<p local-id="f5fe5ecb-be2c-3b5e-8765-bdd42408000c"><code>RD - Discovery</code>: hourly at minute 7.</p>
+</li>
+<li local-id="5c9eea06-d896-3d88-a3ad-9f51a5ab82e3">
+<p local-id="7c862a65-f1ec-38b7-8746-3cf8bda390c4"><code>RD - Drafter</code>: hourly at minute 27.</p>
+</li>
+<li local-id="5ede6680-0851-303a-b757-9c7f81c385cc">
+<p local-id="dbe0c0aa-3d1a-38c7-910c-c5fa7e843095"><code>RD - Asana Sync</code>: every 15 minutes.</p>
+</li>
+</ul>
+</li>
+<li local-id="8ba51a59-e98c-3a53-b47f-d59e53490678">
+<p local-id="c9cbc18e-7d2b-3014-b620-1380aebe430b"><strong>Data sources:</strong></p>
+<ul local-id="c84c2961-582f-3ab2-8df8-c12348679cf9">
+<li local-id="9b39b64c-7039-360e-bded-dbbae96713ad">
+<p local-id="382c648f-3b44-333a-91fe-4faada6a7d74">Reddit's public feed of new posts for the 7 communities in the guidelines (no login).</p>
+</li>
+<li local-id="9da9991f-ec08-3843-8a77-3b7c8beaec55">
+<p local-id="8a052fe6-5856-3875-a5f3-8b806c011074">The replies under each post, read with the login cookie of a <strong>company Reddit reading account</strong> (not u/sellerlogic_support, not a personal account).</p>
+</li>
+<li local-id="ac4db873-6db0-3cd9-a34f-86ad22d335b4">
+<p local-id="022c0c77-fcab-386b-9fae-a73bb9a9e726">The account guidelines "Reddit u/sellerlogic_support Guidelines" v3.2 (Drive <code>1_dSnW9GPrAq7ts1erL4Y703XB7oTILMa</code>), built into the prompts.</p>
+</li>
+<li local-id="b5221bed-5155-3894-965e-b1e2c2c1c53e">
+<p local-id="cc23db92-8766-34e6-8257-e9655a1afa21">The account's own last 30 comments (table <code>rd_account_comments</code>), for self-check 1.</p>
+</li>
+</ul>
+</li>
+<li local-id="7f557157-5c1c-3049-b7d7-f50aaf439928">
+<p local-id="068f0d45-23f0-3e8d-9554-332de42f5a36"><strong>Outputs:</strong></p>
+<ul local-id="af832b89-8e17-3c12-b9d7-ed98e190982c">
+<li local-id="6fac40d9-f92d-33b9-a79c-19a56651f11d">
+<p local-id="8d32aa95-0128-38c2-9245-f2c3f5a6dd10">Asana tasks on the board <a class="external-link" href="https://app.asana.com/1/292294265665759/project/1218967280298844" rel="nofollow">Content | Reddit</a>, assigned to Anton.</p>
+</li>
+<li local-id="13381501-912b-3d78-b13a-17716b93a0db">
+<p local-id="890e1d62-48a2-3ad7-a024-1aefb3442150">Database rows in the <code>rd_</code> tables (every post, decision and draft).</p>
+</li>
+<li local-id="2bccac67-1dd5-3c47-b608-b43840ccde24">
+<p local-id="22bdaaeab9c8">A row per change of state in Anton's sheet "Reddit Seeding / SL", tab "Lane log" (the lane writes only that tab).</p>
+</li>
+</ul>
+</li>
+<li local-id="a1607487-6981-312c-8464-21dbf61876fd">
+<p local-id="c715acce-4835-3599-a9f2-21049c0f6cf6"><strong>Workflows involved:</strong> <code>RD - Discovery</code>, <code>RD - Drafter</code>, <code>RD - Asana Sync</code>. Errors go to <code>JTA: Error Handler</code>.</p>
+</li>
+</ul>
+<hr local-id="441caf8f-45d4-3716-9a26-09ef70b62672">
+<h2 local-id="a953b6fd-3fb6-3678-92f9-83e2d3c14a0b" id="RedditReplyLane|ProcessDocumentation-3.WorkflowPhases">3. Workflow Phases</h2>
+<h3 local-id="4139096d-f151-3758-9f09-2c95e3bf9efd" id="RedditReplyLane|ProcessDocumentation-Phase1:Discovery(RD-Discovery,hourly)">Phase 1: Discovery (RD - Discovery, hourly)</h3>
+<ul local-id="527101ab-b125-3cb6-9046-65bdc88adec0">
+<li local-id="c276a5f3-45df-3f47-bba1-f2ee106bc9a0">
+<p local-id="f0fcf8ef-151b-3b2b-b36c-0d851d2ac655">Reads the newest 100 posts across the 7 communities in one request and stores each post once.</p>
+</li>
+<li local-id="32705cb3-c357-3819-8b3a-8b2062232364">
+<p local-id="0dc22589-f601-3f2d-90b3-7464a454650e">Sets aside every post older than 48 hours that has not reached review yet.</p>
+</li>
+<li local-id="ede28cc4-2b95-38ac-8312-c4321568fb3d">
+<p local-id="37275f10-9010-3ad2-9768-6b966333d516">Takes up to 6 waiting posts, oldest first.</p>
+</li>
+<li local-id="e1ac20c8-a143-364f-9cb5-9fd644bafe03">
+<p local-id="4ba772c2-ea5d-3cb2-a6b6-85273c25990d">Reads the replies under each post with the reading account's cookie:</p>
+<ul local-id="4eeff167-fbb7-3570-8a73-10d1d4b2c01d">
+<li local-id="0110b063-48a1-3ffb-9da8-10e991a5ac73">
+<p local-id="c21acf27-934a-3634-a742-e1162dd2fb06">first ONE test request; if Reddit refuses it, comment reading stops (<code>comments_mode = cookie_paused</code>), the run continues without replies, and an alert task is raised (section 4);</p>
+</li>
+<li local-id="096e9ae4-4c0f-309f-aac8-a1a76134cc0f">
+<p local-id="4088b08c-288c-335c-9fe3-2d78ab365934">if the test passes, one request per post, 65 seconds apart (at most 6 an hour).</p>
+</li>
+</ul>
+</li>
+<li local-id="c603d532-3f33-3372-b651-3f2ec1ac52d6">
+<p local-id="16007319-ca31-3908-a034-40f46b0cfa0f">Gemini sorts each post into RELEVANT, NEEDS_REVIEW or IRRELEVANT using the guidelines' topics, exclusions and stop signals, and lists facts from the post, missing information and risk flags.</p>
+</li>
+<li local-id="0ad772a9-3fe8-3f3d-abe9-ced96cb2e139">
+<p local-id="d9ddee17-be16-3153-a287-b3a3d935462d">Open questions to the community on an in-scope topic ("How do you all handle X?") count as replyable (decision with Anton, <time datetime="2026-10-14" class="date-past">14 окт. 2026 г.</time>).</p>
+</li>
+<li local-id="2c5a4c01-6d57-3a5b-b59d-b638cb007a87">
+<p local-id="e26f42c9-a4ce-36d9-a035-e8644f91db86">If the same person posted 3 or more times within 24 hours, the post gets the flag <code>same_author_burst</code>.</p>
+</li>
+</ul>
+<h3 local-id="423a9123-e439-3e11-bf9f-4c78c5085bad" id="RedditReplyLane|ProcessDocumentation-Phase2:Drafting(RD-Drafter,hourly)">Phase 2: Drafting (RD - Drafter, hourly)</h3>
+<ul local-id="aa585fbc-0e6d-3a6d-87d8-bdb36c95638c">
+<li local-id="cde7d0c2-137d-3346-a441-daf1c8c8796a">
+<p local-id="94ae5325-51c2-3f99-bdeb-132a14167049">Takes up to 4 posts: RELEVANT ones, plus NEEDS_REVIEW ones Anton asked a draft for.</p>
+</li>
+<li local-id="47963e0a-49b0-35d4-a412-646b22553b5f">
+<p local-id="106c1063-3354-33d1-ab36-58d2caa9be0a">Gemini writes one draft in the voice and reply order of the guidelines (40 to 180 words), with the replies under the post in view: it adds what is missing, or skips the post if the answer is already there.</p>
+</li>
+<li local-id="af92520e-32ad-3c0b-ad5b-85420527844e">
+<p local-id="ed180028-225c-3edd-9424-3c5e7680dadf">Three separate self-checks, each rewriting the draft:</p>
+<ol start="1" local-id="297f37ba-7f31-36e8-a5e1-3a9b9b740972">
+<li local-id="e7135b05-262b-369c-8c6f-479fea8ef8b8">
+<p local-id="33b06d1a-33ba-3613-88b8-8af8e9c1d96d">AI patterns and repetition, against the account's last 30 comments;</p>
+</li>
+<li local-id="5034e3e3-2a98-3e83-9ef8-967b25d7a423">
+<p local-id="906812cc-9cdf-354e-806a-60dd81f20219">accuracy and value, against the post and the replies;</p>
+</li>
+<li local-id="7d904d91-1e02-3f76-99da-d9553846dddb">
+<p local-id="285707f8-7836-38a9-91f9-780de802fc2a">human naturalness.</p>
+</li>
+</ol>
+</li>
+<li local-id="dfd5daf2-988d-3a0b-9cd2-a45a305c3969">
+<p local-id="169e0a7b-6696-3b34-bc25-f0ec18e1ad5e">Hard checks in code: dashes replaced by the plain hyphen; no links; no SELLERLOGIC mention, product pitch or DM invitation; no invented personal experience; 40 to 180 words; a detail from the post and a next step (judged by self-check 2).</p>
+</li>
+<li local-id="27d4bb26-07d9-3287-9126-1935bcfbfcd6">
+<p local-id="b138c9d7-925d-3a76-bfeb-0fa9c106fcde">Passed: status DRAFTED. Failed: status BLOCKED with every reason, draft kept.</p>
+</li>
+</ul>
+<h3 local-id="95eae3f8-5220-3259-802f-9e7d1fc0e117" id="RedditReplyLane|ProcessDocumentation-Phase3:ReviewinAsana(RD-AsanaSync,every15minutes)">Phase 3: Review in Asana (RD - Asana Sync, every 15 minutes)</h3>
+<p local-id="7a2204aa-c95e-3e4a-8c3a-65245b2c72ad">One task per post on <a class="external-link" href="https://app.asana.com/1/292294265665759/project/1218967280298844" rel="nofollow">Content | Reddit</a>:</p>
+<div class="table-wrap">
+<table data-layout="default" data-local-id="c50fc6c3-6473-3fa4-9273-3ffb99209640" class="confluenceTable">
+<tbody>
+<tr data-local-id="a2bb2c20-6d80-3134-bfe0-db9949b3bedb">
+<th data-local-id="cf3d7587-7aec-38d8-b3a5-72ee3b076bfa" class="confluenceTh">
+<p local-id="af744203-ec5b-383a-bd8d-8663d995f0d0">Section</p>
+</th>
+<th data-local-id="36af38c4-7723-3e8d-bf53-82202078c384" class="confluenceTh">
+<p local-id="691773f1-2bf8-34f6-84b5-f0c3078d0370">What it holds</p>
+</th>
+<th data-local-id="c8570699-e8c3-3c55-b3ca-0e39973dbc88" class="confluenceTh">
+<p local-id="28d6f71c-8fb1-3061-94c0-a8c466850fff">What Anton does</p>
+</th>
+</tr>
+<tr data-local-id="97fb13d5-cdbb-39e1-9ebe-9382189e5e7b">
+<td data-local-id="ced8947f-b9e5-396c-82a2-1d4f0b756e0c" class="confluenceTd">
+<p local-id="82780a31-590c-3332-b589-8cd9e61c9ee8">Draft ready</p>
+</td>
+<td data-local-id="00f7fa87-6c46-39b4-a785-77e55add2803" class="confluenceTd">
+<p local-id="b54a3800-f4ea-337a-a234-cb3e376c0b82">a draft that passed every check</p>
+</td>
+<td data-local-id="de8230cd-8d82-3cd9-9be8-5ef1766c4075" class="confluenceTd">
+<p local-id="905b9942-15c7-3c41-92f5-136d9e3613d5">edits if needed, posts it himself, moves the task to Posted and adds a comment with the link to his Reddit comment</p>
+</td>
+</tr>
+<tr data-local-id="a8425b56-f7ab-3cc0-a961-f5081e9ee447">
+<td data-local-id="498331a8-bc92-3050-a88d-1191371c7477" class="confluenceTd">
+<p local-id="6642d977-dc13-30a4-9ab0-852f110be13e">Blocked</p>
+</td>
+<td data-local-id="ea0f03e9-51a8-3de9-bd6e-835699257b95" class="confluenceTd">
+<p local-id="2e779f1b-e0f4-3cdb-9a12-ca11abf91be5">a draft a hard check stopped, with the reason</p>
+</td>
+<td data-local-id="4cfd35a1-72ee-34de-98e1-9c902910c21a" class="confluenceTd">
+<p local-id="a59590bf-92d1-3e19-b9fd-f1106723d48e">may still use the text; moves it to Posted or Rejected</p>
+</td>
+</tr>
+<tr data-local-id="34e56e68-ef72-3aea-9760-c4d1e5b7d031">
+<td data-local-id="f82032c9-c8a6-3023-8a16-ed500b281761" class="confluenceTd">
+<p local-id="9b85b254-4d1f-39e1-986a-6aaaff1181b1">Needs review</p>
+</td>
+<td data-local-id="18085152-cea2-3972-82a7-dc14d2b0b20b" class="confluenceTd">
+<p local-id="5f0ca656-fded-35cb-91f3-e9bddcbbb62c">a post that may be worth a reply, no draft</p>
+</td>
+<td data-local-id="51a0dbc9-90d0-3786-a1d3-6ff59f9f7db2" class="confluenceTd">
+<p local-id="a5fcdca5-0a88-30c7-b6bf-41739c6a021e">moves it to "Draft it" for a draft within about an hour, or to Rejected</p>
+</td>
+</tr>
+<tr data-local-id="0585d1b1-2767-3610-8d2f-7acfd678c9c4">
+<td data-local-id="186df3e3-7ca3-303b-b15e-e7ec29881c7a" class="confluenceTd">
+<p local-id="157f5306-c9b6-386f-8e7d-76c3453cbb1b">Draft it</p>
+</td>
+<td data-local-id="e2566a6c-b047-38b0-9f4d-ab33cb6fe5b1" class="confluenceTd">
+<p local-id="7eb2b811-886b-3edd-b5ac-60bdc6e57f5d">his request for a draft</p>
+</td>
+<td data-local-id="b516b4fd-97bf-3bdc-8e9e-3dd0f7ba691f" class="confluenceTd">
+<p local-id="22e5b698-a073-371a-92f2-37b30169b865">nothing; the draft arrives as a task comment</p>
+</td>
+</tr>
+<tr data-local-id="58b3eac1-787a-387b-8dca-1d81d728b665">
+<td data-local-id="c66d3ca9-32b0-3bbb-936d-7ace0d486a08" class="confluenceTd">
+<p local-id="568d3b10-e593-35b8-8c79-0808670571d7">Posted</p>
+</td>
+<td data-local-id="15898213-c77d-313e-bc83-259638d650a2" class="confluenceTd">
+<p local-id="4b04c887-54a4-3069-bcbc-575fe0950725">posted by him</p>
+</td>
+<td data-local-id="9573f398-be62-35bd-842c-a25c00f744f7" class="confluenceTd">
+<p local-id="aaa3adc1-2acf-397c-b6ea-a4b268927d19">nothing more; the lane records the link from his comment</p>
+</td>
+</tr>
+<tr data-local-id="47d193fd-df03-35ae-a429-1a5b43a57a69">
+<td data-local-id="6aa5c1c9-ee7e-397e-b793-79049257b022" class="confluenceTd">
+<p local-id="551a7b3a-a910-3d25-80fe-547f2f913885">Rejected</p>
+</td>
+<td data-local-id="9679cf0e-87e0-3982-bd15-bbcb9b112766" class="confluenceTd">
+<p local-id="dbf5e98c-921c-3129-ade3-54939ae386d1">not posted</p>
+</td>
+<td data-local-id="8fcfa5aa-92fe-3866-8c55-f9ac75b53793" class="confluenceTd">
+<p local-id="cae6d2b3-72d0-3cfc-bbc9-576c909cdc3d">a comment with the reason helps</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul local-id="3fcb61bc-bc7d-3930-9a5d-7ae1708bd5ef">
+<li local-id="5aff8bc6-9e1c-3247-b838-7c36004d7560">
+<p local-id="78899bc7-0dff-3372-97a0-87e388e3c281">Each task shows the post link, the draft, the reasons for and against, risk flags, the original post, and a box when the same author posted several times within 24 hours (with links to the other posts).</p>
+</li>
+<li local-id="87024aa3-15b3-3f81-a68f-28bc52108340">
+<p local-id="e2b38f1a-fd5b-3ac9-bf7c-cf43d92c1f84">Comments the lane writes start with <code>[RD lane]</code>.</p>
+</li>
+<li local-id="0bc802f1-59ee-3041-bfb5-286a1c771d44">
+<p local-id="02a69054-73f8-3e90-8c15-749b12cb17d3">Posted drafts are added to <code>rd_account_comments</code>, so self-check 1 compares new drafts with what the account said recently.</p>
+</li>
+</ul>
+<hr local-id="37d2464c-f50e-3033-b785-dd4fecf659ea">
+<h2 local-id="086dcc31-f75b-383a-9fe0-bdb4f3ee8562" id="RedditReplyLane|ProcessDocumentation-4.Whenthereadingaccount'scookiestopsworking">4. When the reading account's cookie stops working</h2>
+<ul local-id="fffa371a-f135-36f6-b1d1-bdcbbe289c09">
+<li local-id="b29d9384-172a-3a49-a8c7-423cc2b641e6">
+<p local-id="53a01f7a-f849-3c63-929b-598c6680c268">The lane creates the task <strong>"[ACTION] Reddit cookie stopped working"</strong> in Blocked, assigned to the owner of the reading account (<code>rd_config.cookie_owner</code>, Arsenii Kovsh), with the reason.</p>
+</li>
+<li local-id="f601d354-7c66-3b61-a5e7-886f682179f9">
+<p local-id="be40bbf1-130b-35bd-9782-3192891f3dec">Renewal: log in to the reading account in Chrome, copy the cookie <code>reddit_session</code> (F12, Application, Cookies), and paste it into the n8n credential "Reddit session (reading account)" as <code>reddit_session=&lt;value&gt;</code>. Then complete the task: the next Discovery run reads replies again.</p>
+</li>
+</ul>
+<div class="confluence-information-macro confluence-information-macro-note">
+<span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span>
+<div class="confluence-information-macro-body">
+<p local-id="46bdc0ce-7c9f-3c1e-88fb-e1cbcfb743c1">The cookie value is never sent through chat, Slack, documents or tasks. If it stops again soon after a new cookie, Reddit may be refusing the account itself: do not keep renewing.</p>
+</div>
+</div>
+<hr local-id="b7238471-77aa-3f3b-8182-6a3351aa6af4">
+<h2 local-id="2e3752b2-b3f7-31c1-9fcc-ecdaf783d186" id="RedditReplyLane|ProcessDocumentation-5.TechnicalReference">5. Technical Reference</h2>
+<div class="table-wrap">
+<table data-layout="default" data-local-id="d11e137a-a2cf-3ea4-aaef-485d049a2b61" class="confluenceTable">
+<tbody>
+<tr data-local-id="d68fd73e-2f09-38f7-85bb-eb8868fbb134">
+<th data-local-id="ea6dea7b-d751-3f86-916b-c2a35ab66a6f" class="confluenceTh">
+<p local-id="d43b6cd5-bb19-359b-be14-0d32fde645cf">Item</p>
+</th>
+<th data-local-id="8f9c6bf0-65d4-37b4-8c87-f9428e8eede9" class="confluenceTh">
+<p local-id="8edff385-515c-3374-9ab1-03419dd56e2a">Value</p>
+</th>
+</tr>
+<tr data-local-id="3e5b68a3-a9c8-3451-9f0d-cf89636c96bc">
+<td data-local-id="de1296c4-e06b-3984-b6b5-18b5be27b3f7" class="confluenceTd">
+<p local-id="07b8d07d-d136-3a12-b1fc-f1bdedeb8ae4">Workflow files (source of truth)</p>
+</td>
+<td data-local-id="50c11b37-6c54-3d07-af6d-079cfc1c6eb1" class="confluenceTd">
+<p local-id="52e1d1be-25b3-36a9-b57c-a93fcb64ede4">shared repo <code>management-claude-instructions</code>, folder <code>n8n/workflows/reddit/</code>. Generated by <code>generators/build_discovery.py</code>, <code>build_drafter.py</code>, <code>build_asana_sync.py</code>; never hand-edit the JSON. Behaviour test: <code>generators/test_rd_code_nodes.js</code> (82 checks)</p>
+</td>
+</tr>
+<tr data-local-id="aea59913-239e-3910-bd4e-a4f365102cf8">
+<td data-local-id="6bd355af-e93f-32c5-990b-f2def0d7ff5a" class="confluenceTd">
+<p local-id="8d198791-98a7-359a-ba9f-c089d46578c5">How a change reaches n8n</p>
+</td>
+<td data-local-id="d8e9a86a-c719-3d1b-b52c-24c95accc7e9" class="confluenceTd">
+<p local-id="2efb7c55-a5ce-3bb0-8966-4fc830074ebe">commit and push, then <code>python3.13 scripts\n8n_api.py upload "&lt;file&gt;"</code> (it compares the result with the file)</p>
+</td>
+</tr>
+<tr data-local-id="efd9d472-4bf9-32eb-aa69-7b05f7dce04d">
+<td data-local-id="51ddc354-d461-3d6f-bf32-71e80847ec00" class="confluenceTd">
+<p local-id="7e07d6d0-97f9-36a9-9146-11222d1cf662">n8n workflow ids</p>
+</td>
+<td data-local-id="cf01b8a2-0897-3d7f-88e7-e946185cb1dc" class="confluenceTd">
+<p local-id="e604f923-b804-3b2b-92ff-64c122d9cd76">Discovery <code>EQAN6qNTLJZHazSD</code> · Drafter <code>tn7Qf5LP6Zrw0Edv</code> · Asana Sync <code>fjoEl0cs03mrLRgR</code></p>
+</td>
+</tr>
+<tr data-local-id="053a028e-ff10-3a51-8ac1-a3f65a02adef">
+<td data-local-id="653b9589-11be-3639-abd5-6c3b37fcad46" class="confluenceTd">
+<p local-id="6a96aa89-8ee0-3337-bfa4-05c497abde5c">DB tables (bot database)</p>
+</td>
+<td data-local-id="053c2f86-b7f8-3880-b56b-fb65c71c669f" class="confluenceTd">
+<p local-id="0515fc2c-c853-3cdb-9037-dfba0fffef9f"><code>rd_posts</code> (every post, sorting, draft, decision) · <code>rd_config</code> (settings and Asana ids) · <code>rd_subreddits</code> (the 7 communities) · <code>rd_run_log</code> (one row per run) · <code>rd_account_comments</code> (what the account said, for self-check 1)</p>
+</td>
+</tr>
+<tr data-local-id="9438a3ba-4d96-37c9-9532-ac1c7a4233bb">
+<td data-local-id="b0ad13bf-f30d-3287-9464-5cdae885e743" class="confluenceTd">
+<p local-id="a2f185ad-d81f-33eb-b5ba-b258afa4f7b6">Settings (rd_config)</p>
+</td>
+<td data-local-id="c69cf3f8-1fdc-3b6c-80d3-16372df65bb9" class="confluenceTd">
+<p local-id="8a4b67186623"><code>comments_mode</code> (cookie · cookie_paused · off · rss), <code>max_post_age_hours</code> 48, <code>classify_per_run</code> 6, <code>draft_per_run</code> 4, <code>asana_assignee</code> (Anton), <code>cookie_owner</code> (Arsenii), <code>sheet_enabled</code> (true), <code>sheet_id</code>, <code>sheet_tab</code> (Lane log)</p>
+</td>
+</tr>
+<tr data-local-id="4f1cea66-6f2a-3d40-ac14-ecca4d3c0ecc">
+<td data-local-id="77a95dbd-961c-3761-8141-6b11dbc7d54e" class="confluenceTd">
+<p local-id="522c7db3-3106-3782-843e-550ae4d25627">n8n credential ids</p>
+</td>
+<td data-local-id="2828d6e5-a2a0-3002-b0a7-1bad1bba484c" class="confluenceTd">
+<p local-id="46d7a35e-0b79-322c-ae18-6ae872eb68f0">Postgres <code>mmfGQjTIlXfCF7E7</code> · Gemini <code>Uj5F5uHp0rBd02qE</code> · Asana <code>j6XUm8QTDARIRMis</code> · Google service account <code>xF1E3bzHLPWgqFJ1</code> · Reddit session (reading account) <code>ihqmGYakmB4krPs3</code></p>
+</td>
+</tr>
+<tr data-local-id="29aaa089-21c3-39d3-9071-4d37f230d353">
+<td data-local-id="df7c10d5-800a-3ec0-9b46-e1ba7ff77d6c" class="confluenceTd">
+<p local-id="f31dcc7d-fa0b-335e-96b0-41b08ab4db81">Asana board</p>
+</td>
+<td data-local-id="09c2d4e5-723f-36d4-8273-da16c19f2c2d" class="confluenceTd">
+<p local-id="5c8e275f-c84f-3e67-a255-bab51f595377">Content | Reddit, project <code>1218967280298844</code></p>
+</td>
+</tr>
+<tr data-local-id="e43eab1eae5b">
+<td data-local-id="347e2e7a4b21" class="confluenceTd">
+<p local-id="3b74bb31486e">Activity sheet</p>
+</td>
+<td data-local-id="3346158846f2" class="confluenceTd">
+<p local-id="ce3ccd1d5d3a">"Reddit Seeding / SL" <code>1FXAAXNywMMq0tT2-e0OhIj8Oc1aqXvnOSFcsoZie0Sk</code>, tab "Lane log" (<code>rd_config.sheet_id</code>, <code>sheet_tab</code>)</p>
+</td>
+</tr>
+<tr data-local-id="4ff5aed7-dce2-38b8-93d9-1c182ba40b06">
+<td data-local-id="4df34180-7b49-3008-a157-d075a9446ed7" class="confluenceTd">
+<p local-id="395fffbf-1827-39db-98df-1f48b970c6b4">Error workflow</p>
+</td>
+<td data-local-id="58289582-5b0e-3217-a3f4-a42e0a1a73e0" class="confluenceTd">
+<p local-id="4a985973-cfc3-37f3-94f9-ff556cc8f6fa"><code>JTA: Error Handler</code> <code>0L5gnWWi89qdTajZmQ_FE</code>, posts to the n8n errors Slack channel</p>
+</td>
+</tr>
+<tr data-local-id="7a2da430-5e9a-34c6-8e7d-d475fdf28eb1">
+<td data-local-id="a115d78f-f2ff-34a5-877f-ede3f237e1cf" class="confluenceTd">
+<p local-id="d955bb47-c272-3fb6-82d0-9a62f1feb13c">Model</p>
+</td>
+<td data-local-id="b6499bca-019e-3122-89ea-50bda8eefc02" class="confluenceTd">
+<p local-id="2037bb2a-0303-3bdb-8c20-5a88afe71502"><code>gemini-3-flash-preview</code>, up to 24,576 output tokens per call</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr local-id="e19f4bdd-3b71-3a90-8d20-38feae216097">
+<h2 local-id="ce7a12b9-f09b-3a5d-9681-ecfaf3fde46a" id="RedditReplyLane|ProcessDocumentation-6.KnownGaps/Pending">6. Known Gaps / Pending</h2>
+<ul local-id="0bfbd377-ddbc-3804-9588-ea724bb3c203">
+<li local-id="1ebb8f72-7265-32cb-83a6-28b524b029e3">
+<p local-id="9fe2d99075ae"><strong>Activity sheet log is on</strong> since 2026-10-15 15:00 UTC (the first run wrote 97 rows, one per post sorted so far). Sheet "Reddit Seeding / SL" (<code>1FXAAXNywMMq0tT2-e0OhIj8Oc1aqXvnOSFcsoZie0Sk</code>), tab "Lane log", written by the automation's Google account (<code>n8n-drive-reader@rising-parser-490607-u3.iam.gserviceaccount.com</code>). Anton's tabs "r/ Comments", "Stealth Agents" and "info" are never written.</p>
+</li>
+<li local-id="24277fca-4927-36f2-bda2-ed38a146a4ee">
+<p local-id="d2868f75-c854-3fc5-9000-25ce983bdd30"><strong>No written approval from Reddit</strong> for scheduled reading of its data. Going live without it was a management decision on <time datetime="2026-10-14" class="date-past">14 окт. 2026 г.</time>. The lane identifies itself honestly as SELLERLOGIC's automation and reads at most about 7 pages an hour.</p>
+</li>
+<li local-id="549c91cd-29b2-338b-a29d-50db167168cd">
+<p local-id="dd6da5e6-d37a-300b-9468-0d3dcc93524d"><strong>What Anton actually posted is not read back from Reddit.</strong> Self-check 1 learns from the draft of a posted reply, not from his edited text.</p>
+</li>
+<li local-id="3dceecb3-62b9-306b-883c-e8fcc48af82b">
+<p local-id="00287369-6441-385f-8b0e-eff8f372c3fd"><strong>The detail-from-the-post and next-step checks are judged by AI</strong>, not by code.</p>
+</li>
+<li local-id="b610ed55-5a8e-31f0-8c21-3e2c3d453706">
+<p local-id="d13c9c73-1d42-3f31-a72a-0f8328a53e9c"><strong>Posts sorted while comment reading was paused</strong> carry the warning "replies not read"; Anton reads the thread before posting.</p>
+</li>
+</ul>
+    </div>
+</body>
+</html>

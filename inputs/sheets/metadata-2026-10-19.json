@@ -1,0 +1,60 @@
+{
+  "spreadsheetId": "1FXAAXNywMMq0tT2-e0OhIj8Oc1aqXvnOSFcsoZie0Sk",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1FXAAXNywMMq0tT2-e0OhIj8Oc1aqXvnOSFcsoZie0Sk/edit?ouid=100235595409700750178",
+  "properties": {
+    "title": "Reddit Seeding / SL ",
+    "locale": "uk_UA",
+    "timeZone": "Europe/Kiev"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 1815536610,
+        "title": "r/ Comments",
+        "index": 0,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1002,
+          "columnCount": 27
+        }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 0,
+        "title": "Stealth Agents",
+        "index": 1,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1002,
+          "columnCount": 33
+        }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 1756748402,
+        "title": "info",
+        "index": 2,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 26
+        }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 1062326136,
+        "title": "Lane log",
+        "index": 3,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1251,
+          "columnCount": 16,
+          "frozenRowCount": 1
+        }
+      }
+    }
+  ]
+}

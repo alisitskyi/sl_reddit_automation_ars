@@ -1,0 +1,2 @@
+# Preserve archive bytes so SHA256 verification works after cloning.
+* -text

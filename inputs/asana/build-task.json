@@ -1,0 +1,155 @@
+{
+  "gid": "1218958869038776",
+  "actual_time_minutes": null,
+  "assignee": {
+    "gid": "1205842674771759",
+    "name": "Anton Lisitskyi",
+    "resource_type": "user"
+  },
+  "assignee_status": "inbox",
+  "assignee_section": {
+    "gid": "1205842675820128",
+    "name": "Recently assigned",
+    "resource_type": "section"
+  },
+  "completed": false,
+  "completed_at": null,
+  "created_at": "2026-09-28T21:52:59.408Z",
+  "custom_fields": [],
+  "due_at": null,
+  "due_on": null,
+  "followers": [
+    {
+      "gid": "1199659962130386",
+      "name": "Arsenii Kovsh",
+      "resource_type": "user"
+    },
+    {
+      "gid": "1205842674771759",
+      "name": "Anton Lisitskyi",
+      "resource_type": "user"
+    }
+  ],
+  "hearted": false,
+  "hearts": [],
+  "liked": false,
+  "likes": [],
+  "memberships": [],
+  "modified_at": "2026-10-18T10:48:54.328Z",
+  "name": "Reddit Demand Generation | Build Reddit Post Discovery and Reply Drafting Automation",
+  "notes": "Create an automation for the u/sellerlogic_support Reddit workflow.\nThe automation must support three main stages:\n\n1. Post discovery and classification\n\n    Check the approved Amazon seller subreddits every 60 minutes.\n    Collect new posts and relevant metadata.\n    Prevent duplicate processing.\n    Analyze the post and existing comments.\n    Classify each post as:\n        RELEVANT\n        NEEDS_REVIEW\n        IRRELEVANT\n    Apply the topic and exclusion rules defined in the attached Reddit u/sellerlogic_support Guidelines.\n\n2. Reply draft generation\n\nFor every RELEVANT post:\n    Prepare a reply draft from the perspective of a knowledgeable SELLERLOGIC employee.\n    Use the specific context and details of the post.\n    Provide practical value to the Amazon seller.\n    Do not advertise SELLERLOGIC products.\n    Do not fabricate facts, cases, results, or personal experience.\n    Clearly separate confirmed facts from assumptions.\n    Run the three AI quality checks defined in the guidelines.\n    Never use an em dash or en dash.\nFor NEEDS_REVIEW posts:\n    Provide the post URL and text.\n    Explain why the post may or may not be relevant.\n    Ask whether a reply draft should be prepared.\nIRRELEVANT posts should be logged but should not be sent for approval.\n\n3. Human approval\n\nSend the following information for review:\n    Full Reddit post URL\n    Subreddit\n    Original post or target comment text\n    Relevance category\n    Reason for classification\n    Final reply draft\n    Any risk flags or missing information\nThe automation must stop after submitting the draft for approval.\nIt must not publish comments on Reddit. The final review, editing, and publication are performed manually.\n\nExpected result\n\nA working process that:\n    Finds relevant Reddit discussions every 60 minutes.\n    Filters irrelevant or risky posts.\n    Creates accurate and natural reply drafts.\n    Sends drafts to the responsible person for approval.\n    Logs all processed posts and decisions.\n    Never publishes anything automatically.\n\nReference documents\n\nReddit u/sellerlogic_support Guidelines https://drive.google.com/file/d/1_dSnW9GPrAq7ts1erL4Y703XB7oTILMa/view?usp=drive_link\nReddit u/sellerlogic_support Activity Log https://docs.google.com/spreadsheets/d/1S9WkCn1NcsNx8hg1gAyyqjBnAnEVySBR6uPogMb5NlM/edit?gid=1815536610#gid=1815536610",
+  "num_hearts": 0,
+  "num_likes": 0,
+  "parent": {
+    "gid": "1213489642661167",
+    "name": "Reddit Demand Generation",
+    "resource_type": "task",
+    "resource_subtype": "default_task"
+  },
+  "permalink_url": "https://app.asana.com/1/292294265665759/task/1218958869038776",
+  "projects": [],
+  "resource_type": "task",
+  "start_at": null,
+  "start_on": null,
+  "tags": [],
+  "resource_subtype": "default_task",
+  "workspace": {
+    "gid": "292294265665759",
+    "name": "SELLERLOGIC",
+    "resource_type": "workspace"
+  },
+  "subtasks": [],
+  "comments": [
+    {
+      "gid": "1219102813155221",
+      "created_at": "2026-10-02T13:46:12.661Z",
+      "created_by": {
+        "gid": "1199659962130386",
+        "name": "Arsenii Kovsh",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/1/292294265665759/profile/1205842675820111\nNeed your decision on whether to request Reddit API access, as anything automated will run under your account.\n\nReddit requires explicit approval before any automated access to its data, and written approval for commercial use. We already hit this: a test run collected 100 posts, then Reddit refused all 6 comment requests with \"You've been blocked by network security\".\n\nThe request is filed by the account owner here, with \"I'm an enterprise partner/commercial developer\" already selected: https://support.reddithelp.com/hc/en-us/requests/new?ticket_form_id=14868593862164&tf_42139884615700=api_request_type_enterprise_clone It asks for company details, the purpose, what we deliver with the data (nothing, internal use only) and a data budget (lowest bracket \"< $500/month\"). Reddit's policy behind it: https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy\nExpected answer time is 2 to 4 weeks, sometimes no answer at all, and cost is around $0.24 per 1,000 calls. For us that is roughly 5,000 calls a month. (Timing and price were researched with AI from third-party sources, not confirmed by Reddit.)\n\nTwo rules in Reddit's policy affect your account directly: \n    App accounts can only be used for the app (\"no mixed use accounts\"), so the automation likely needs its own account next to u/sellerlogic_support. \n    Multiple accounts or requests for the same use case are prohibited. The aged accounts, proxy and antidetect browser in the parent task go directly against this and put u/sellerlogic_support at risk.\n\nWithout API access, this can still be automated: You paste a post and its visible comments into an Asana task, and within about 15 minutes you get its category with reasons and risk flags, plus a reply draft that passed the three checks from the guidelines and the hard checks (no dashes, no product pitch, no links, 40 to 180 words). Every post, draft, your final text and the comment URL are logged in the activity sheet. A weekly digest of topics and pain points for blog and email ideas.\nWhat it cannot do without the API is find posts for you every hour. That part stays manual.\n\nThrere are also ways to make this easier on the Claude side (skills & some tools) but honest assessment - without API (and even with, with said Reddit rules) - this process wont be efficient",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    },
+    {
+      "gid": "1219257194868318",
+      "created_at": "2026-10-07T12:27:33.988Z",
+      "created_by": {
+        "gid": "1205842674771759",
+        "name": "Anton Lisitskyi",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/1/292294265665759/profile/1199659962164875\nhere is the full non-API project documentation",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    },
+    {
+      "gid": "1219507764996836",
+      "created_at": "2026-10-14T15:15:38.631Z",
+      "created_by": {
+        "gid": "1199659962130386",
+        "name": "Arsenii Kovsh",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/1/292294265665759/profile/1205842675820111 the Reddit lane is live from today. Every hour it reads new posts in the 7 subreddits from your guidelines, sorts them, reads the replies under each post, and writes a draft that passed the three self-checks. Nothing is ever posted automatically.\n\nThe tasks come to you on the board \"Content | Reddit\":\n    Draft ready: the draft passed every check. Edit it if needed and post it yourself, then move the task to Posted and add a comment with the link to your Reddit comment.\n    Blocked: a hard check stopped the draft, the reason is in the task. The text is still there to use.\n    Needs review: may be worth a reply. Move it to \"Draft it\" to get a draft within about an hour, or to Rejected.\n    Rejected: not posting it. A comment with the reason helps.\n\nWhen one person posts several times in a day, each task says so, with links to the other posts.\n\nOne thing from your side: please share the Activity Log sheet as Editor with n8n-drive-reader@rising-parser-490607-u3.iam.gserviceaccount.com and with me, so the automation can log to its own new tab \"Lane log\". Your \"r/ Comments\" tab stays untouched.",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    },
+    {
+      "gid": "1219544952941532",
+      "created_at": "2026-10-15T13:44:49.996Z",
+      "created_by": {
+        "gid": "1205842674771759",
+        "name": "Anton Lisitskyi",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/1/292294265665759/profile/1199659962164875 the Editor excess is shared",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    },
+    {
+      "gid": "1219548707403263",
+      "created_at": "2026-10-15T15:03:27.032Z",
+      "created_by": {
+        "gid": "1199659962130386",
+        "name": "Arsenii Kovsh",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/0/1205842675820115/ thanks, it works. The lane logs into your \"Reddit Seeding / SL\" file, in its own tab \"Lane log\". The first run today at 15:00 UTC wrote 97 rows, one per post sorted so far, and from now on it adds a row each time a post changes state. Your \"r/ Comments\", \"Stealth Agents\" and \"info\" tabs are never written.\n\nClosing this build task: the lane has been live since October 14, drafts come to you on \"Content | Reddit\", and nothing is posted automatically.",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    },
+    {
+      "gid": "1219572593021506",
+      "created_at": "2026-10-16T08:39:20.073Z",
+      "created_by": {
+        "gid": "1205842674771759",
+        "name": "Anton Lisitskyi",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/1/292294265665759/profile/1199659962164875 Thank you!\n13 comments have been posted already)\nOne more ask (for Claude) - to summarize the doc with all project setup data (System Architecture & Deployment Guide) and put it here.",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    },
+    {
+      "gid": "1219573647892731",
+      "created_at": "2026-10-16T09:21:29.842Z",
+      "created_by": {
+        "gid": "1199659962130386",
+        "name": "Arsenii Kovsh",
+        "resource_type": "user"
+      },
+      "resource_type": "story",
+      "text": "https://app.asana.com/0/1205842675820115/ here is the setup summary. The full version is the Confluence page \"Reddit Reply Lane | Process Documentation\": https://sellerlogic.atlassian.net/wiki/spaces/AIBOT/pages/2891579393\n\nWhat it is\nThree n8n workflows on the company n8n server, a set of tables in the bot database, Gemini for sorting and drafting, Asana for your review, and your sheet for the log. Nothing in it can post, comment or vote on Reddit.\n\nHow it runs\n    RD - Discovery, hourly at :07: reads the newest 100 posts across the 7 subreddits in one request (no login), stores each post once, sets aside anything older than 48 hours, then takes up to 6 posts, reads the replies under each with the company reading account's cookie (one request per post, 65 seconds apart) and sorts them with Gemini into RELEVANT, NEEDS_REVIEW or IRRELEVANT against your guidelines v3.2.\n    RD - Drafter, hourly at :27: takes up to 4 posts (RELEVANT, plus NEEDS_REVIEW ones you moved to \"Draft it\"), writes one draft of 40 to 180 words, runs the three self-checks from the guidelines, then hard checks in code (no dashes, no links, no SELLERLOGIC mention or DM invite, no invented experience). Pass goes to \"Draft ready\", fail to \"Blocked\" with the reasons.\n    RD - Asana Sync, every 15 minutes: creates the tasks on Content | Reddit, reads your section moves and comments back, and writes one row per change to the \"Lane log\" tab.\n    Subreddits: AmazonFBA, AmazonFBATips, amazonprivatelabel, AmazonSeller, Amazonsellercentral, amazonsellers, FulfillmentByAmazon.\n\nWhere things live\n    Workflow files: shared GitLab repo management-claude-instructions, folder n8n/workflows/reddit/. They are generated by three scripts in that folder; a change is made there, tested, and uploaded to n8n from the file, never edited in n8n directly.\n    n8n workflow ids: Discovery EQAN6qNTLJZHazSD, Drafter tn7Qf5LP6Zrw0Edv, Asana Sync fjoEl0cs03mrLRgR. Errors go to the \"JTA: Error Handler\" workflow and the n8n errors Slack channel.\n    n8n credentials: Postgres, Gemini, Asana, the Google service account (writes the sheet), and \"Reddit session (reading account)\".\n    Database tables: rd_posts (every post, its sorting, draft and your decision), rd_config (settings), rd_subreddits (the 7 communities), rd_run_log (one row per run), rd_account_comments (what the account said recently, for self-check 1).\n    Board: Content | Reddit. Sheet: \"Reddit Seeding / SL\", only the \"Lane log\" tab is written.\n    Model: gemini-3-flash-preview.\n\nSettings (each one a single database change, through me)\nPosts sorted per run 6, drafts per run 4, max post age 48 hours, who gets the tasks (you), the subreddit list.\n\nWhen the reading cookie stops working\nIf Reddit refuses the test request, reply reading pauses: the lane carries on without replies and raises \"[ACTION] Reddit cookie stopped working\" to me. I renew the cookie in n8n; it never passes through chat, Slack or tasks. Until then, tasks say \"replies not read\", so read the thread before posting.\n\nKnown limits\n    No written approval from Reddit for scheduled reading; going live without it was a management decision. The lane identifies itself as SELLERLOGIC's automation and reads about 7 pages an hour.\n    Your posted text is not read back from Reddit, so self-check 1 learns from the draft, not from your edit.\n    The \"detail from the post\" and \"next step\" checks are judged by AI, not by code.\n",
+      "type": "comment",
+      "resource_subtype": "comment_added"
+    }
+  ]
+}

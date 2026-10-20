@@ -1,0 +1,317 @@
+{
+  "snapshot_date": "2026-10-19",
+  "documentation_updated": "2026-10-20",
+  "type": "documentation-and-data-archive",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "bytes": 144,
+      "sha256": "08836F9D428A1AA356FD026ED0A985C25C98A950013F5F03C57D14736C3F0787"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 77,
+      "sha256": "FFE3472A3FF7891CE63CB7CCA890D1C92F35507BB71D196AD7D6722330B30A11"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 246,
+      "sha256": "09DC91FB33B40A8E59E41F4E52248CD089892736D22AB09C7D0D2C8697B94E57"
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "bytes": 81,
+      "sha256": "38B5EEA411AAF9CF050B1FCF2E02369012DDFF359369831560D11F7B463F832E"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "bytes": 173,
+      "sha256": "28D29F84D9882CB078B6A2FEF45CEBC78E68E8841932203DB51A22ABD7C32CF9"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5722,
+      "sha256": "BCB055FB6BF6D6C01A5E688417BC595196380098645F65F3954B81178810E748"
+    },
+    {
+      "path": "chats/claude/README.md",
+      "bytes": 189,
+      "sha256": "022DF724C2E8FD4881ADFC672911C5F935EA0BF35D693B7AEC9AB7411C11DC7F"
+    },
+    {
+      "path": "chats/codex/README.md",
+      "bytes": 188,
+      "sha256": "18682F96E3D3A27098EBED3021EA80CE3E622182552C7644C1E38DFA2D2314A5"
+    },
+    {
+      "path": "chats/local-model/README.md",
+      "bytes": 194,
+      "sha256": "B546709510E740CDA8B9BF09B5DE026E069D544137D6FC73D388079601C194A2"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 144,
+      "sha256": "80BB820240D26F1DFA7C4639A87C0FF1421F8AFF7D493566C1490EAB328B6E09"
+    },
+    {
+      "path": "config/documented-settings.json",
+      "bytes": 2146,
+      "sha256": "9BAF30B45442C1CD00FE7E3B409B7BE68CB171EDFA3950C6496DA8B89E3C9974"
+    },
+    {
+      "path": "database/backups/README.md",
+      "bytes": 126,
+      "sha256": "41D7B9F9801B9DED8F263F5FD605B9FA3E31B90800CF6D3B17AF378915426A2D"
+    },
+    {
+      "path": "database/README.md",
+      "bytes": 387,
+      "sha256": "7D9A129469C41E1B2198BBA7E8CF753178E0BA6EC16F094F8AD3B2104DEA8CB0"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 1699,
+      "sha256": "288F6F7763DD8BB1A8CC91681A6D346AF01DD259A912E587B84A04F4FA554873"
+    },
+    {
+      "path": "docs/ASANA-ATTACHMENT-FINDINGS.md",
+      "bytes": 2797,
+      "sha256": "22C7CD4B611BBE11A3BAD284B999413F2432238D67ABA6D3EC22D368235567F5"
+    },
+    {
+      "path": "docs/MISSING-FILES.md",
+      "bytes": 3468,
+      "sha256": "E6A0B2D7F8372A3CA639DCC23AFD3654FCB85B35E3C14B103B7F8916D323C850"
+    },
+    {
+      "path": "docs/OPERATIONS.md",
+      "bytes": 1395,
+      "sha256": "41166FF9689251F255E9293230E6345BF51EC8B6DABB09EF67048A5EDE838158"
+    },
+    {
+      "path": "docs/PROJECT-STATUS.md",
+      "bytes": 4569,
+      "sha256": "E5126D1369EA617EAA792711359148E6E1C03F8F44EA2BE0C412AF4F6E70E3E9"
+    },
+    {
+      "path": "docs/RESTORE-CHECKLIST.md",
+      "bytes": 1986,
+      "sha256": "81CFF65E44D88E46667C3431DAA4493FC054F271A54FFB4A6063454E56369351"
+    },
+    {
+      "path": "docs/SERVER-DEPLOYMENT-GUIDE.md",
+      "bytes": 13619,
+      "sha256": "59FDEE992164AC29071374041198A3BCCF7C357BBD8539517DA6BE85BF09A2C6"
+    },
+    {
+      "path": "inputs/asana/attachments/Reddit_parser_AL_v6_package.zip",
+      "bytes": 326980,
+      "sha256": "10FADB77D8E580E1886CDDBDACF42818D0226839C454BE0ABE2F51399D0F6BEB"
+    },
+    {
+      "path": "inputs/asana/build-task.json",
+      "bytes": 14397,
+      "sha256": "9A628CA0CCDB876E75B7A07AEE6D0058CEEFFABF4376A879B9528F3F389021C8"
+    },
+    {
+      "path": "inputs/asana/build-task.md",
+      "bytes": 10968,
+      "sha256": "B03E96B1314C9FE7EDA611C764B7E165D73A422E04FFEC8ACC8D0B0627FCAE23"
+    },
+    {
+      "path": "inputs/asana/content-reddit-board.json",
+      "bytes": 2266,
+      "sha256": "99C51D0CA6FB02345463FBE77B32F129B5BB02EDA5824E4DA737F859161AA23A"
+    },
+    {
+      "path": "inputs/asana/content-reddit-task-details.json",
+      "bytes": 459681,
+      "sha256": "C2A92AC1D2B75E89CB9F7FCDF0BA2E8ACD3A57B7849D139F35D0D8BD34C523DB"
+    },
+    {
+      "path": "inputs/asana/content-reddit-task-index.json",
+      "bytes": 49027,
+      "sha256": "9AD791842265F6278ED815B819E7FC0E8206BFC3092669A95618E2AD6C01D258"
+    },
+    {
+      "path": "inputs/confluence/process-documentation-v4.html",
+      "bytes": 22469,
+      "sha256": "E9E6DFAC02B06C8BE84330C0C537790D2D2F9432254744DCC0549829E2DED30B"
+    },
+    {
+      "path": "inputs/confluence/process-documentation-v4.json",
+      "bytes": 23298,
+      "sha256": "746F641D14EAF5657D9FEA53CF37B2FBA600B571076474E030D0B0DA3C5A85F4"
+    },
+    {
+      "path": "inputs/confluence/process-documentation-v4.md",
+      "bytes": 8611,
+      "sha256": "11798775616D8C8957AFF2575750EBA83534E4303344C10B4DC1761221EC2A31"
+    },
+    {
+      "path": "inputs/confluence/user-export-2026-10-20/links.json",
+      "bytes": 74,
+      "sha256": "E4CCDB0882637A73044AA6BB9F9FEA27092304A3EBE3B245FBCF7379C4144D69"
+    },
+    {
+      "path": "inputs/confluence/user-export-2026-10-20/process-documentation-export-2026-10-20.html",
+      "bytes": 29755,
+      "sha256": "3F00A6DB8E68000A4886DC9669D22ACF4270EA5B5517D84DADAC335013092D15"
+    },
+    {
+      "path": "inputs/confluence/user-export-2026-10-20/process-documentation-export-2026-10-20.txt",
+      "bytes": 8008,
+      "sha256": "45145542BB8030CC7F43E5FECC79C21E8BC01309A3732FAAD45F269B3222F12D"
+    },
+    {
+      "path": "inputs/confluence/user-export-2026-10-20/Reddit+Reply+Lane+_+Process+Documentation.doc",
+      "bytes": 30956,
+      "sha256": "62E1731568FF92D2F70B7ABB0CC9014F4DC62BE9831462F25DC3DE212FF1B4F1"
+    },
+    {
+      "path": "inputs/guidelines/Reddit_sellerlogic_support_Guidelines.extracted.txt",
+      "bytes": 13971,
+      "sha256": "B1284CD363482165891F2D851BB6CA30269780677CE68DD2118C4EBF1D64B8B9"
+    },
+    {
+      "path": "inputs/guidelines/Reddit_sellerlogic_support_Guidelines.pdf",
+      "bytes": 1288703,
+      "sha256": "3DB67A7E4EAA5D06ADD9AFC06FD3D58254022995475B67D3460DBB387FC167E4"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/app/app.py",
+      "bytes": 43556,
+      "sha256": "6D257BADA3AC0E6F77A011B4046A47EB145D04B943D0D79F7FFF76B7B84E5E06"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/app/output/.gitkeep",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/app/README.md",
+      "bytes": 6867,
+      "sha256": "4B87CBA111D25DBD5838604AC7ACA9D2D88E5E2678368DCB047BFB51C7DDA8CF"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/app/requirements.txt",
+      "bytes": 24,
+      "sha256": "2642A6487BAFFB942B8D0A9EF68CAC90F32F899AF6498E128FAD87EA6A738425"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/app/run.bat",
+      "bytes": 240,
+      "sha256": "3A7194474E2E401523F916DCDC77F8D477F5ED9B6BE566BF6009EF899F601308"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/console_scripts/extract_urls.py",
+      "bytes": 2750,
+      "sha256": "86F9C7471904E4FA67F178125FF2FCED728FC26256CCC36316D620AC9B1222D0"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/console_scripts/README.txt",
+      "bytes": 846,
+      "sha256": "536019C1007303C94F1C9CC0D8A18216390307B1C1883C187406B001C4B4733B"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/console_scripts/reddit_posts_exporter_2.py",
+      "bytes": 10665,
+      "sha256": "F26CC51B66165D897A8E886D223AB71698E1652B4A1F156A8667BB1C6D727D34"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/docs/Reddit_Parser_AL_EN.docx",
+      "bytes": 137286,
+      "sha256": "B8DA35A4EBB7FD0DFEA7E51B02662EFBFDE247543CE2D3CD2105B0327D1C77C6"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/docs/Reddit_Parser_AL_EN.md",
+      "bytes": 38327,
+      "sha256": "60108E8D222FBCF25A35853A5F9B3D93CA8ED2C5DAFF952398E5CB8D6DE4CF8E"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/docs/Reddit_Parser_AL_UA.docx",
+      "bytes": 131913,
+      "sha256": "6AFBDD794D60052EB2A4E6D523B95D93E6ECF46B34F1433AB0ECA18052B08B59"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/docs/Reddit_Parser_AL_UA.md",
+      "bytes": 58861,
+      "sha256": "476C2A1FED81F352069F4A58114948049F529B00F74BDC5D6FC9FFC761CD607B"
+    },
+    {
+      "path": "inputs/legacy/Reddit_parser_AL_v6_package/README.txt",
+      "bytes": 414,
+      "sha256": "2C90D7C5D6131D9F83401CCE32652DB59A417E18E8DB086B53D3F25CB0DEF560"
+    },
+    {
+      "path": "inputs/sheets/lane-log-2026-10-19.csv",
+      "bytes": 229212,
+      "sha256": "ACD4340EE37734DDA310B8BB52C01029214937001E364580625458215ABAA818"
+    },
+    {
+      "path": "inputs/sheets/lane-log-2026-10-19.json",
+      "bytes": 255781,
+      "sha256": "BA3FD21A4B5B98BE48EF5950D8028D05FCB66AD9A633C9C1D68076E69A95C281"
+    },
+    {
+      "path": "inputs/sheets/metadata-2026-10-19.json",
+      "bytes": 1351,
+      "sha256": "3A18C00468F1A34C5F42744277647D8FF5E21B52BDC6B50AFB0002444EDDCE87"
+    },
+    {
+      "path": "n8n/workflows/reddit/README.md",
+      "bytes": 336,
+      "sha256": "0B02B623AFD0E1407DF2055C3385C81650FDA1E335D75D8B84E5A55E787DCA87"
+    },
+    {
+      "path": "outputs/README.md",
+      "bytes": 59,
+      "sha256": "5F70DAB93145F6FC38101A963107905C76FE706C523D1A2BB7ED653B2D634585"
+    },
+    {
+      "path": "private/README.md",
+      "bytes": 317,
+      "sha256": "E060DDEB085C9E0B2C67CD10FB63D330B3744CD9A2613A825BB6A34A93FA58E7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4380,
+      "sha256": "AE11A4ED17D96CD6F278F039F190C3B1CAD319C62F94586C50B15016EE141DFD"
+    },
+    {
+      "path": "references/SOURCES.md",
+      "bytes": 2440,
+      "sha256": "DA11C4E1C82CCD53F96AB6BECD1A024108B0F3E743DB9D9CD42914D99B06A7C8"
+    },
+    {
+      "path": "scripts/Verify-Archive.ps1",
+      "bytes": 805,
+      "sha256": "77FF4984AB0F4C60D4D338D0106BE6BF17B1D86D508E415330B2B8B1B0A8304B"
+    },
+    {
+      "path": "sl_reddit_sellerlogic_support.code-workspace",
+      "bytes": 71,
+      "sha256": "CCBA6084F7D358937E612EF3B445FE5FFFF19A63AC9044AF60A6039075A3848B"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 1488,
+      "sha256": "4A37323089795F587BF3A959BB28C1D5D81FCA5C25097E65ACB3D5D097A30BE6"
+    },
+    {
+      "path": "templates/reddit-review.md",
+      "bytes": 1249,
+      "sha256": "A0E2DA6236F402DBFB1D29821EC6F2BB97EB98DBB7688E3430534C10D70143BC"
+    },
+    {
+      "path": "templates/session-handoff.md",
+      "bytes": 257,
+      "sha256": "9AE2F8F493DAEF006166FDF10C821BEACD7436B2C8CB5B444E040930ADDAE596"
+    },
+    {
+      "path": "working/README.md",
+      "bytes": 59,
+      "sha256": "066A50809BADCBAF208F021227B662C92FE534787551080FF9FBBA041E8EE9DF"
+    }
+  ]
+}

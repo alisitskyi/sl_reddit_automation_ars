@@ -1,0 +1,99 @@
+{
+  "gid": "1218967280298844",
+  "archived": false,
+  "resource_subtype": "default_project",
+  "color": "hot-pink",
+  "completed": false,
+  "completed_at": null,
+  "created_at": "2026-09-29T08:55:47.601Z",
+  "current_status": null,
+  "current_status_update": null,
+  "custom_fields": [],
+  "custom_field_settings": [],
+  "default_access_level": "editor",
+  "default_view": "list",
+  "due_on": null,
+  "due_date": null,
+  "followers": [
+    {
+      "gid": "1199659962130386",
+      "name": "Arsenii Kovsh",
+      "resource_type": "user"
+    },
+    {
+      "gid": "1205842674771759",
+      "name": "Anton Lisitskyi",
+      "resource_type": "user"
+    }
+  ],
+  "members": [
+    {
+      "gid": "1199659962130386",
+      "name": "Arsenii Kovsh",
+      "resource_type": "user"
+    },
+    {
+      "gid": "1205842674771759",
+      "name": "Anton Lisitskyi",
+      "resource_type": "user"
+    }
+  ],
+  "minimum_access_level_for_customization": "editor",
+  "minimum_access_level_for_sharing": "editor",
+  "modified_at": "2026-10-19T14:15:31.425Z",
+  "name": "Content | Reddit",
+  "notes": "",
+  "owner": {
+    "gid": "1199659962130386",
+    "name": "Arsenii Kovsh",
+    "resource_type": "user"
+  },
+  "permalink_url": "https://app.asana.com/1/292294265665759/project/1218967280298844",
+  "privacy_setting": "private",
+  "public": false,
+  "resource_type": "project",
+  "start_on": null,
+  "team": null,
+  "workspace": {
+    "gid": "292294265665759",
+    "name": "SELLERLOGIC",
+    "resource_type": "workspace"
+  },
+  "task_counts": {
+    "num_tasks": 96,
+    "num_completed_tasks": 94,
+    "num_incomplete_tasks": 2
+  },
+  "sections": [
+    {
+      "gid": "1218967280298845",
+      "name": "Needs review",
+      "resource_type": "section"
+    },
+    {
+      "gid": "1218967280298856",
+      "name": "Draft it",
+      "resource_type": "section"
+    },
+    {
+      "gid": "1218967280298857",
+      "name": "Draft ready",
+      "resource_type": "section"
+    },
+    {
+      "gid": "1218967280298860",
+      "name": "Blocked",
+      "resource_type": "section"
+    },
+    {
+      "gid": "1218967280298861",
+      "name": "Posted",
+      "resource_type": "section"
+    },
+    {
+      "gid": "1218971083979823",
+      "name": "Rejected",
+      "resource_type": "section"
+    }
+  ]
+}

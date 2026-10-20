@@ -1,0 +1,94 @@
+{
+  "snapshot_date": "2026-10-19",
+  "authority": "Documented settings from Confluence v4, not a live n8n or database read",
+  "local_automation_enabled": false,
+  "workflows": [
+    {
+      "name": "RD - Discovery",
+      "id": "EQAN6qNTLJZHazSD",
+      "schedule": "hourly at minute 7"
+    },
+    {
+      "name": "RD - Drafter",
+      "id": "tn7Qf5LP6Zrw0Edv",
+      "schedule": "hourly at minute 27"
+    },
+    {
+      "name": "RD - Asana Sync",
+      "id": "fjoEl0cs03mrLRgR",
+      "schedule": "every 15 minutes"
+    }
+  ],
+  "error_workflow": {
+    "name": "JTA: Error Handler",
+    "id": "0L5gnWWi89qdTajZmQ_FE"
+  },
+  "source_repo": {
+    "name": "management-claude-instructions",
+    "url": null,
+    "path": "n8n/workflows/reddit/"
+  },
+  "model": "gemini-3-flash-preview",
+  "max_post_age_hours": 48,
+  "classify_per_run": 6,
+  "draft_per_run": 4,
+  "subreddits": [
+    "AmazonFBA",
+    "AmazonFBATips",
+    "amazonprivatelabel",
+    "AmazonSeller",
+    "Amazonsellercentral",
+    "amazonsellers",
+    "FulfillmentByAmazon"
+  ],
+  "asana": {
+    "project_id": "1218967280298844",
+    "assignee_id": "1205842674771759",
+    "cookie_owner_id": "1199659962130386",
+    "sections": {
+      "Needs review": "1218967280298845",
+      "Draft it": "1218967280298856",
+      "Draft ready": "1218967280298857",
+      "Blocked": "1218967280298860",
+      "Posted": "1218967280298861",
+      "Rejected": "1218971083979823"
+    }
+  },
+  "sheet": {
+    "id": "1FXAAXNywMMq0tT2-e0OhIj8Oc1aqXvnOSFcsoZie0Sk",
+    "tab": "Lane log",
+    "sheet_gid": 1062326136
+  },
+  "database": {
+    "tables": [
+      "rd_posts",
+      "rd_config",
+      "rd_subreddits",
+      "rd_run_log",
+      "rd_account_comments"
+    ],
+    "ddl_available": false
+  },
+  "credentials": [
+    {
+      "name": "Postgres",
+      "id": "mmfGQjTIlXfCF7E7"
+    },
+    {
+      "name": "Gemini",
+      "id": "Uj5F5uHp0rBd02qE"
+    },
+    {
+      "name": "Asana",
+      "id": "j6XUm8QTDARIRMis"
+    },
+    {
+      "name": "Google service account",
+      "id": "xF1E3bzHLPWgqFJ1"
+    },
+    {
+      "name": "Reddit session (reading account)",
+      "id": "ihqmGYakmB4krPs3"
+    }
+  ]
+}
